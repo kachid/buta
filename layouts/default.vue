@@ -4,6 +4,7 @@
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
+      right
       fixed
       app
     >
@@ -24,40 +25,52 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn @click.stop="miniVariant = !miniVariant" icon>
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn @click.stop="clipped = !clipped" icon>
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn @click.stop="fixed = !fixed" icon>
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
+    <v-app-bar
+      :clipped-left="clipped"
+      absolute
+      app
+      prominent
+      shrink-on-scroll
+      scroll-target="#scrolling-techniques-2"
+    >
+      <div class="subtitle-2">Contact Us +44 (012) 5689 3264</div>
       <v-spacer />
-      <v-btn @click.stop="rightDrawer = !rightDrawer" icon>
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      <div class="select">
+        <v-select :items="currency" solo flat dense />
+        <v-select :items="language" solo flat dense />
+      </div>
+      <template v-slot:extension>
+        <v-toolbar-title v-text="name" />
+        <v-spacer />
+        <v-app-bar-nav-icon
+          @click.stop="drawer = !drawer"
+          class="hidden-lg-and-up"
+        />
+        <v-btn-toggle group>
+          <v-btn
+            v-for="{ title, to } in pages"
+            :key="title"
+            :to="to"
+            nuxt
+            exact
+            text
+          >
+            {{ title }}
+          </v-btn>
+        </v-btn-toggle>
+      </template>
     </v-app-bar>
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <v-sheet
+        id="scrolling-techniques-2"
+        class="overflow-y-auto"
+        max-height="600"
+      >
+        <v-container>
+          <nuxt />
+        </v-container>
+      </v-sheet>
     </v-content>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer :fixed="fixed" app>
       <span>&copy; 2019</span>
     </v-footer>
@@ -86,8 +99,27 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      name: 'Hotel Buta',
+      currency: ['RUB', 'USD', 'EUR'],
+      language: ['ENG', 'RUS'],
+      pages: [
+        { title: 'HOME', to: '/' },
+        { title: 'ABOUT', to: '/' },
+        { title: 'GALLERY', to: '/' },
+        { title: 'PAGES', to: '/' },
+        { title: 'BLOG', to: '/' },
+        { title: 'CONTACT', to: '/' }
+      ]
     }
   }
 }
 </script>
+<style>
+.full-width {
+  width: 100%;
+}
+.select {
+  display: flex;
+  width: 174px;
+}
+</style>
