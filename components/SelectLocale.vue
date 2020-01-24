@@ -1,7 +1,21 @@
 <template>
   <div class="select">
-    <v-select :items="currency" :value="currency" solo flat dense />
-    <v-select :items="language" :value="language" solo flat dense />
+    <v-select
+      :items="currency"
+      :value="currency"
+      background-color="transparent"
+      solo
+      flat
+      dense
+    />
+    <v-select
+      :items="language"
+      :value="language"
+      background-color="transparent"
+      solo
+      flat
+      dense
+    />
   </div>
 </template>
 

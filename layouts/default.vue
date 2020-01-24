@@ -28,9 +28,11 @@
       app
       dark
       prominent
+      color="rgba(100,115,201,.7)"
       shrink-on-scroll
       scroll-target="#scrolling-techniques-2"
       src="/hotel_pool.jpg"
+      fade-img-on-scroll
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -55,6 +57,7 @@
             :to="to"
             nuxt
             exact
+            x-large
             text
             class="hidden-md-and-down"
           >
@@ -80,14 +83,18 @@
         gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
         height="300"
       >
-        <span>&copy; 2020</span>
+        <v-row>
+          <v-col>
+            <span class="ma-6">&copy; 2020</span>
+          </v-col>
+        </v-row>
       </v-img>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-import AppSelectLocale from '@/components/SelectLocale'
+import AppSelectLocale from '@@/components/SelectLocale'
 
 export default {
   components: {
