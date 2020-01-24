@@ -47,8 +47,8 @@
         <v-toolbar-title v-text="name" />
         <v-spacer />
         <v-app-bar-nav-icon
-          @click.stop="drawer = !drawer"
           class="hidden-lg-and-up"
+          @click.stop="drawer = !drawer"
         />
         <v-btn-toggle group>
           <v-btn
@@ -70,7 +70,7 @@
       <v-sheet
         id="scrolling-techniques-2"
         class="overflow-y-auto"
-        max-height="600"
+        max-height="800"
       >
         <v-container>
           <nuxt />
@@ -116,8 +116,6 @@ export default {
       right: true,
       rightDrawer: false,
       name: 'Hotel Buta',
-      currency: ['RUB', 'USD', 'EUR'],
-      language: ['ENG', 'RUS'],
       pages: [
         { title: 'HOME', to: '/' },
         { title: 'ABOUT', to: '/about' },
@@ -130,8 +128,3 @@ export default {
   }
 }
 </script>
-<style>
-.full-width {
-  width: 100%;
-}
-</style>

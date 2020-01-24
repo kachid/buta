@@ -2,7 +2,7 @@
   <div class="select">
     <v-select
       :items="currency"
-      :value="currency"
+      :value="currencyValue"
       background-color="transparent"
       solo
       flat
@@ -10,7 +10,7 @@
     />
     <v-select
       :items="language"
-      :value="language"
+      :value="languageValue"
       background-color="transparent"
       solo
       flat
@@ -23,15 +23,19 @@
 export default {
   name: 'SelectLocale',
   props: {
-    currency: {
+    currencyValue: {
       type: String,
       default: 'USD'
     },
-    language: {
+    languageValue: {
       type: String,
       default: 'RUS'
     }
-  }
+  },
+  data: () => ({
+    currency: ['RUB', 'USD', 'EUR'],
+    language: ['ENG', 'RUS']
+  })
 }
 </script>
 
