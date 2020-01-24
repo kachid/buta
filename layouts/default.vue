@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -10,17 +10,14 @@
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
+          v-for="{ title, to } in pages"
+          :key="title"
+          :to="to"
           router
           exact
         >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+            <v-list-item-title v-text="title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -29,10 +26,18 @@
       :clipped-left="clipped"
       absolute
       app
+      dark
       prominent
       shrink-on-scroll
       scroll-target="#scrolling-techniques-2"
+      src="/hotel_pool.jpg"
     >
+      <template v-slot:img="{ props }">
+        <v-img
+          v-bind="props"
+          gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
+        ></v-img>
+      </template>
       <div class="subtitle-2">Contact Us +44 (012) 5689 3264</div>
       <v-spacer />
       <div class="select">
@@ -54,6 +59,7 @@
             nuxt
             exact
             text
+            class="hidden-md-and-down"
           >
             {{ title }}
           </v-btn>
@@ -71,8 +77,14 @@
         </v-container>
       </v-sheet>
     </v-content>
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2019</span>
+    <v-footer app absolute padless dark>
+      <v-img
+        src="/hotel_pool.jpg"
+        gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
+        height="300"
+      >
+        <span>&copy; 2020</span>
+      </v-img>
     </v-footer>
   </v-app>
 </template>
@@ -89,11 +101,6 @@ export default {
           icon: 'mdi-apps',
           title: 'Welcome',
           to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
         }
       ],
       miniVariant: false,
@@ -104,11 +111,11 @@ export default {
       language: ['ENG', 'RUS'],
       pages: [
         { title: 'HOME', to: '/' },
-        { title: 'ABOUT', to: '/' },
-        { title: 'GALLERY', to: '/' },
-        { title: 'PAGES', to: '/' },
-        { title: 'BLOG', to: '/' },
-        { title: 'CONTACT', to: '/' }
+        { title: 'ABOUT', to: '/about' },
+        { title: 'GALLERY', to: '/gallery' },
+        { title: 'PAGES', to: '/pages' },
+        { title: 'BLOG', to: '/blog' },
+        { title: 'CONTACT', to: '/contact' }
       ]
     }
   }
