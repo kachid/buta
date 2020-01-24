@@ -40,10 +40,7 @@
       </template>
       <div class="subtitle-2">Contact Us +44 (012) 5689 3264</div>
       <v-spacer />
-      <div class="select">
-        <v-select :items="currency" solo flat dense />
-        <v-select :items="language" solo flat dense />
-      </div>
+      <app-select-locale />
       <template v-slot:extension>
         <v-toolbar-title v-text="name" />
         <v-spacer />
@@ -90,7 +87,12 @@
 </template>
 
 <script>
+import AppSelectLocale from '@/components/SelectLocale'
+
 export default {
+  components: {
+    AppSelectLocale
+  },
   data() {
     return {
       clipped: false,
@@ -124,9 +126,5 @@ export default {
 <style>
 .full-width {
   width: 100%;
-}
-.select {
-  display: flex;
-  width: 174px;
 }
 </style>
