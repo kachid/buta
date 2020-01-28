@@ -1,12 +1,13 @@
 <template>
-  <v-col cols="12" sm="6" md="4" lg="3">
-    <v-card flat outlined>
+  <v-col cols="12" sm="6" md="4" lg="3" class="d-flex">
+    <v-card flat height="200" class="flex-grow-1">
       <v-card-title>{{ title }}</v-card-title>
       <v-card-actions>
         <app-date-picker v-if="isDatePicker" />
         <app-select-number-of-person v-else />
       </v-card-actions>
     </v-card>
+    <v-divider v-if="!noGutter" inset vertical class="flex-shrink-1" />
   </v-col>
 </template>
 
@@ -26,6 +27,10 @@ export default {
       default: 'Header'
     },
     isDatePicker: {
+      type: Boolean,
+      default: false
+    },
+    noGutter: {
       type: Boolean,
       default: false
     }

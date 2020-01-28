@@ -3,25 +3,25 @@
     ref="menu"
     v-model="menu"
     :close-on-content-click="false"
-    :return-value.sync="date"
     transition="scale-transition"
     offset-y
     max-width="290px"
     min-width="290px"
   >
     <template v-slot:activator="{ on }">
-      <v-text-field
-        v-model="date"
-        label="Picker in menu"
-        prepend-icon="mdi-calendar"
-        readonly
-        v-on="on"
-      ></v-text-field>
+      <v-btn text v-on="on">
+        <span class="display-2">{{ day }}</span>
+        <span>th {{ month }}</span>
+        <v-icon>mdi-menu-down</v-icon>
+      </v-btn>
     </template>
-    <v-date-picker v-model="date" type="month" no-title scrollable>
-      <v-spacer></v-spacer>
-      <v-btn text color="primary" @click="menu = false">Cancel</v-btn>
-      <v-btn text color="primary" @click="$refs.menu.save(date)">OK</v-btn>
+    <v-date-picker
+      v-model="date"
+      no-title
+      scrollable
+      reactive
+      @change="$refs.menu.save(date)"
+    >
     </v-date-picker>
   </v-menu>
 </template>
@@ -30,9 +30,34 @@
 export default {
   name: 'DatePicker',
   data: () => ({
-    date: new Date().toISOString().substr(0, 7),
+    date: new Date().toISOString(),
     menu: false,
     modal: false
-  })
+  }),
+  computed: {
+    getDateFromISO() {
+      return new Date(Date.parse(this.date))
+    },
+    day() {
+      return this.getDateFromISO.getDate()
+    },
+    month() {
+      const months = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+      ]
+      return months[this.getDateFromISO.getMonth()]
+    }
+  }
 }
 </script>
