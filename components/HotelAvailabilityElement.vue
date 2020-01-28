@@ -7,7 +7,7 @@
         <app-select-number-of-person v-else />
       </v-card-actions>
     </v-card>
-    <v-divider v-if="!noGutter" inset vertical class="flex-shrink-1" />
+    <v-divider v-if="showGutter" inset vertical />
   </v-col>
 </template>
 
@@ -33,6 +33,11 @@ export default {
     noGutter: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    showGutter() {
+      return !this.noGutter && !this.$vuetify.breakpoint.smAndDown
     }
   }
 }
