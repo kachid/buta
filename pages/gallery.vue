@@ -18,7 +18,6 @@ export default {
     images: [
       { src: '/images/hotel_pool_02.jpg' },
       { src: '/images/hotel_pool_03.jpg' },
-      { src: '/images/hotel_pool_04.jpg' },
       { src: '/images/sunbeds.jpg' },
       { src: '/images/sunbeds_02.jpg' },
       { src: '/images/sunbeds_03.jpg' },
