@@ -31,7 +31,7 @@
       color="rgba(100,115,201,.7)"
       shrink-on-scroll
       scroll-target="#scrolling-techniques-2"
-      src="/hotel_pool.jpg"
+      src="/images/hotel_pool.jpg"
       fade-img-on-scroll
     >
       <template v-slot:img="{ props }">
@@ -79,7 +79,7 @@
     </v-content>
     <v-footer app absolute padless dark>
       <v-img
-        src="/hotel_pool.jpg"
+        src="/images/hotel_pool.jpg"
         gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
         height="300"
       >
