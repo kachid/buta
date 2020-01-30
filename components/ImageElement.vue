@@ -1,5 +1,5 @@
 <template>
-  <v-hover v-slot:default="{ hover }">
+  <v-hover v-slot:default="{ hover }" open-delay="300">
     <v-card class="ma-5">
       <v-img :src="src" width="300" contain>
         <v-fade-transition>
@@ -28,18 +28,23 @@
           </div>
         </v-expand-transition>
       </v-img>
-      <v-dialog v-model="dialog" max-width="500">
-        <v-card>
-          <v-img :src="src" max-width="500" contain />
-        </v-card>
-      </v-dialog>
+      <app-image-element-dialog
+        :src="src"
+        :dialog="dialog"
+        @close_dialog="dialog = false"
+      />
     </v-card>
   </v-hover>
 </template>
 
 <script>
+import AppImageElementDialog from '@@/components/ImageElementDialog'
+
 export default {
   name: 'ImageElement',
+  components: {
+    AppImageElementDialog
+  },
   props: {
     src: {
       type: String,
