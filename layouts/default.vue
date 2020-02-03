@@ -40,7 +40,10 @@
           gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
         ></v-img>
       </template>
-      <div class="subtitle-2">Contact Us +44 (012) 5689 3264</div>
+      <div class="subtitle-2">
+        Contact Us&emsp;
+        <a href="tel:+995558090979">+995 (558) 09 09 79</a>
+      </div>
       <v-spacer />
       <app-select-locale />
       <template v-slot:extension>
@@ -120,7 +123,7 @@ export default {
         { title: 'HOME', to: '/' },
         { title: 'ABOUT', to: '/about' },
         { title: 'GALLERY', to: '/gallery' },
-        { title: 'PAGES', to: '/pages' },
+        { title: 'ROOMS', to: '/rooms' },
         { title: 'BLOG', to: '/blog' },
         { title: 'CONTACT', to: '/contact' }
       ]
@@ -128,3 +131,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+</style>

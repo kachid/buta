@@ -17,7 +17,7 @@
             <v-img :src="image.src" max-width="500" contain>
               <div>&nbsp;</div>
               <v-expand-transition>
-                <div v-if="hover" class="gray lighten-5 text-center">
+                <div v-if="hover" class="text-center">
                   {{ i + 1 }} of {{ images.length }}
                 </div>
               </v-expand-transition>
