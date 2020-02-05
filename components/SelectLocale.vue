@@ -9,8 +9,8 @@
       dense
     />
     <v-select
+      v-model="currentLanguage"
       :items="language"
-      :value="languageValue"
       background-color="transparent"
       solo
       flat
@@ -26,16 +26,33 @@ export default {
     currencyValue: {
       type: String,
       default: 'USD'
-    },
-    languageValue: {
-      type: String,
-      default: 'RUS'
     }
   },
   data: () => ({
     currency: ['RUB', 'USD', 'EUR'],
-    language: ['ENG', 'RUS']
-  })
+    currentLanguage: ''
+  }),
+  computed: {
+    language() {
+      const lang = this.$i18n.locales // .filter(
+      // (i) => i.code !== this.$i18n.locale
+      // )
+      return lang.map((l) => l.code.toUpperCase())
+    }
+  },
+  watch: {
+    currentLanguage(locale) {
+      this.$i18n.setLocale(locale.toLowerCase())
+    }
+  },
+  mounted() {
+    this.currentLanguage = this.$i18n.locale.toUpperCase()
+  } // ,
+  // methods: {
+  //   onChangeLanguage(e) {
+  //     this.currentLanguage = e.toLowerCase()
+  //   }
+  // }
 }
 </script>
 

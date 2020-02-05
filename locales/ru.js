@@ -1,3 +1,4 @@
 export default {
-  contactUs: 'Свяжитесь с нами'
+  contactUs: 'Свяжитесь с нами',
+  hotelName: 'Отель Бута'
 }

@@ -47,7 +47,7 @@
       <v-spacer />
       <app-select-locale />
       <template v-slot:extension>
-        <v-toolbar-title v-text="name" />
+        <v-toolbar-title v-text="$t('hotelName')" />
         <v-spacer />
         <v-app-bar-nav-icon
           class="hidden-lg-and-up"
