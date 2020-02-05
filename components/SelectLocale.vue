@@ -11,17 +11,30 @@
     <v-select
       v-model="currentLanguage"
       :items="language"
+      :filter="availableLocales"
       background-color="transparent"
       solo
       flat
       dense
-    />
+    >
+      <template v-slot:selection="{ item }">
+        {{ item | toUpperCase }}
+      </template>
+      <template v-slot:item="{ item }">
+        {{ item | toUpperCase }}
+      </template>
+    </v-select>
   </div>
 </template>
 
 <script>
 export default {
   name: 'SelectLocale',
+  filters: {
+    toUpperCase(value) {
+      return value.toUpperCase()
+    }
+  },
   props: {
     currencyValue: {
       type: String,
@@ -37,22 +50,22 @@ export default {
       const lang = this.$i18n.locales // .filter(
       // (i) => i.code !== this.$i18n.locale
       // )
-      return lang.map((l) => l.code.toUpperCase())
+      return lang.map((l) => l.code)
     }
   },
   watch: {
     currentLanguage(locale) {
-      this.$i18n.setLocale(locale.toLowerCase())
+      this.$i18n.setLocale(locale)
     }
   },
   mounted() {
-    this.currentLanguage = this.$i18n.locale.toUpperCase()
-  } // ,
-  // methods: {
-  //   onChangeLanguage(e) {
-  //     this.currentLanguage = e.toLowerCase()
-  //   }
-  // }
+    this.currentLanguage = this.$i18n.locale
+  },
+  methods: {
+    availableLocales(item, queryText, itemText) {
+      return item !== this.$i18n.locale
+    }
+  }
 }
 </script>
 
