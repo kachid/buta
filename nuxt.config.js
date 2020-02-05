@@ -42,7 +42,20 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['nuxt-i18n'],
+  i18n: {
+    strategy: 'no_prefix',
+    locales: [
+      { code: 'en', iso: 'en-US', file: 'en.js', name: 'English' },
+      { code: 'ru', iso: 'ru-RU', file: 'ru.js', name: 'Russian' }
+    ],
+    langDir: '/locales/',
+    lazy: true,
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en'
+    }
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module

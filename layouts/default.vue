@@ -41,7 +41,7 @@
         ></v-img>
       </template>
       <div class="subtitle-2">
-        Contact Us&emsp;
+        {{ $t('contactUs') }}&emsp;
         <a href="tel:+995558090979">+995 (558) 09 09 79</a>
       </div>
       <v-spacer />
