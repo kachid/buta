@@ -1,39 +1,23 @@
 <template>
   <div class="select">
-    <v-select
+    <app-select-locale-element
+      :select="currencyValue"
       :items="currency"
-      :value="currencyValue"
-      background-color="transparent"
-      solo
-      flat
-      dense
+      @onSelected="currentCurrency = $event"
     />
-    <v-select
-      v-model="currentLanguage"
+    <app-select-locale-element
+      :select="currentLanguage"
       :items="language"
-      :filter="availableLocales"
-      background-color="transparent"
-      solo
-      flat
-      dense
-    >
-      <template v-slot:selection="{ item }">
-        {{ item | toUpperCase }}
-      </template>
-      <template v-slot:item="{ item }">
-        {{ item | toUpperCase }}
-      </template>
-    </v-select>
+      @onSelected="currentLanguage = $event"
+    />
   </div>
 </template>
 
 <script>
 export default {
   name: 'SelectLocale',
-  filters: {
-    toUpperCase(value) {
-      return value.toUpperCase()
-    }
+  components: {
+    AppSelectLocaleElement: () => import('@@/components/SelectLocaleElement')
   },
   props: {
     currencyValue: {
@@ -43,13 +27,12 @@ export default {
   },
   data: () => ({
     currency: ['RUB', 'USD', 'EUR'],
-    currentLanguage: ''
+    currentLanguage: '',
+    currentCurrency: ''
   }),
   computed: {
     language() {
-      const lang = this.$i18n.locales // .filter(
-      // (i) => i.code !== this.$i18n.locale
-      // )
+      const lang = this.$i18n.locales
       return lang.map((l) => l.code)
     }
   },
@@ -60,11 +43,7 @@ export default {
   },
   mounted() {
     this.currentLanguage = this.$i18n.locale
-  },
-  methods: {
-    availableLocales(item, queryText, itemText) {
-      return item !== this.$i18n.locale
-    }
+    this.currentCurrency = this.currencyValue
   }
 }
 </script>
