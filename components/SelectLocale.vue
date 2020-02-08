@@ -41,8 +41,8 @@ export default {
       this.$i18n.setLocale(locale)
     }
   },
-  mounted() {
-    this.currentLanguage = this.$i18n.locale
+  async mounted() {
+    this.currentLanguage = await this.$i18n.locale
     this.currentCurrency = this.currencyValue
   }
 }

@@ -11,7 +11,7 @@
     <template v-slot:activator="{ on }">
       <v-btn text v-on="on">
         <span class="display-2">{{ day }}</span>
-        <span>th {{ month }}</span>
+        <span>{{ $t('dateEnding') }} {{ month }}</span>
         <v-icon>mdi-menu-down</v-icon>
       </v-btn>
     </template>
@@ -41,22 +41,30 @@ export default {
     day() {
       return this.getDateFromISO.getDate()
     },
+    getMonthLocale() {
+      return this.$t('month')
+    },
     month() {
       const months = [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec'
+        this.getMonthLocale.january,
+        this.getMonthLocale.february,
+        this.getMonthLocale.march,
+        this.getMonthLocale.april,
+        this.getMonthLocale.may,
+        this.getMonthLocale.june,
+        this.getMonthLocale.jule,
+        this.getMonthLocale.august,
+        this.getMonthLocale.september,
+        this.getMonthLocale.october,
+        this.getMonthLocale.november,
+        this.getMonthLocale.december
       ]
       return months[this.getDateFromISO.getMonth()]
+    }
+  },
+  watch: {
+    '$i18n.locale'(newLocale) {
+      this.$vuetify.lang.current = newLocale
     }
   }
 }

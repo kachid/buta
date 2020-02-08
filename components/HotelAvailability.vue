@@ -1,8 +1,11 @@
 <template>
   <v-row justify="center" align-content="center">
-    <app-hotel-availability-element title="check-in" is-date-picker />
-    <app-hotel-availability-element title="check-out" is-date-picker />
-    <app-hotel-availability-element title="total guest" no-gutter />
+    <app-hotel-availability-element :title="$t('ava.checkIn')" is-date-picker />
+    <app-hotel-availability-element
+      :title="$t('ava.checkOut')"
+      is-date-picker
+    />
+    <app-hotel-availability-element :title="$t('ava.totalGuest')" no-gutter />
     <app-check-availability />
   </v-row>
 </template>

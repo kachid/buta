@@ -1,13 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      right
-      fixed
-      app
-    >
+    <v-navigation-drawer v-model="drawer" right fixed app>
       <v-list>
         <v-list-item
           v-for="{ title, to } in pages"
@@ -23,7 +16,6 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
-      :clipped-left="clipped"
       absolute
       app
       dark
@@ -47,7 +39,7 @@
       <v-spacer />
       <app-select-locale />
       <template v-slot:extension>
-        <v-toolbar-title v-text="$t('hotelName')" />
+        <v-toolbar-title v-text="name" />
         <v-spacer />
         <v-app-bar-nav-icon
           class="hidden-lg-and-up"
@@ -103,29 +95,24 @@ export default {
   components: {
     AppSelectLocale
   },
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      name: 'Hotel Buta',
-      pages: [
-        { title: 'HOME', to: '/' },
-        { title: 'ABOUT', to: '/about' },
-        { title: 'GALLERY', to: '/gallery' },
-        { title: 'ROOMS', to: '/rooms' },
-        { title: 'BLOG', to: '/blog' },
-        { title: 'CONTACT', to: '/contact' }
+  data: () => ({
+    drawer: false
+  }),
+  computed: {
+    nav() {
+      return this.$t('nav')
+    },
+    name() {
+      return this.$t('hotelName')
+    },
+    pages() {
+      return [
+        { title: this.nav.home, to: '/' },
+        { title: this.nav.about, to: '/about' },
+        { title: this.nav.gallery, to: '/gallery' },
+        { title: this.nav.rooms, to: '/rooms' },
+        { title: this.nav.blog, to: '/blog' },
+        { title: this.nav.contact, to: '/contact' }
       ]
     }
   }

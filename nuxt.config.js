@@ -61,6 +61,7 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
+    /* optionsPath: '~/vuetify.options.js', */
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
@@ -84,6 +85,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config) {}
   }
 }
