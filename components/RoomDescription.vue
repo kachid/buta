@@ -5,7 +5,7 @@
         <v-img :src="img" max-width="500" contain />
         <div>
           <v-card-title
-            :class="[$vuetify.breakpoint.smAndDown ? 'title' : 'display-1']"
+            :class="[$vuetify.breakpoint.smAndDown ? 'title' : 'headline']"
           >
             <slot name="title" />
           </v-card-title>

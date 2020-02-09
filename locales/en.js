@@ -42,5 +42,21 @@ export default {
       'Hotel Buta offers a barbecue. Guests at the accommodation will be able to enjoy activities in and around Batumi, like cycling.',
     p4:
       'Ali and Nino Monument is 5 km from Hotel Buta, while Petra Fortress is 19 km from the property. The nearest airport is Batumi International Airport, 11 km from the hotel.'
+  },
+  rooms: {
+    ourRooms: 'Our Rooms',
+    p1:
+      "Situated in Batumi, 1.2 km from Makhinjauri Beach, Hotel Buta features accommodation with a restaurant, free private parking, a seasonal outdoor swimming pool and a bar. Among the facilities at this property are a shared kitchen and free shuttle service, along with free WiFi throughout the property. The property offers bike hire and features a garden and children's playground.",
+    twoBedroomHouse: 'Two-Bedroom House',
+    standardTripleRoom: 'Standard Triple Room',
+    superiorTripleRoom: 'Superior Triple Room',
+    deluxeApartment: 'Deluxe Apartment',
+    sleeps: 'Sleeps:',
+    livingRoom: 'Living room:',
+    bedroom1: 'Bedroom 1:',
+    bedroom2: 'Bedroom 2:',
+    sofaBed: 'sofa bed',
+    singleBed: 'single bed | single beds',
+    largeDoubleBed: 'large double bed'
   }
 }
