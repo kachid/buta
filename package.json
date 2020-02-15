@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "nuxt": "^2.0.0",
-    "nuxt-i18n": "^6.5.0"
+    "nuxt-i18n": "^6.5.0",
+    "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {
     "@intlify/vue-i18n-extensions": "^1.0.0",
