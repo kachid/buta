@@ -9,6 +9,10 @@ export default {
     blog: 'БЛОГ',
     contact: 'КОНТАКТЫ'
   },
+  err: {
+    pageNotFound: '404 Страница не обнаружена',
+    otherError: 'Произошла ошибка'
+  },
   ava: {
     checkIn: 'день заезда',
     checkOut: 'день отъезда',
