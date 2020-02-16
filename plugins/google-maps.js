@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
-Vue.use(VueGoogleMaps, {
+const options = {
   load: {
-    key: 'GOOGLE_MAP_KEY',
-    libraries: 'places'
+    key: process.env.mapKey
   }
-})
+}
+Vue.use(VueGoogleMaps, options)

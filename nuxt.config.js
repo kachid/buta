@@ -1,10 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
+require('dotenv').config()
 
 export default {
   mode: 'universal',
-  /*
-   ** Headers of the page
-   */
+
+  env: {
+    mapKey: process.env.API_GOOGLE_MAP_KEY
+  },
+
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
@@ -19,13 +22,9 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  /*
-   ** Customize the progress-bar color
-   */
+
   loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
+
   css: [],
   /*
    ** Plugins to load before mounting the App
@@ -37,7 +36,8 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv'
   ],
   /*
    ** Nuxt.js modules

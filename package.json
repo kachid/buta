@@ -20,6 +20,7 @@
   "devDependencies": {
     "@intlify/vue-i18n-extensions": "^1.0.0",
     "@intlify/vue-i18n-loader": "^0.6.1",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^2.0.2",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/vuetify": "^1.10.3",
