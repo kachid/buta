@@ -9,6 +9,10 @@ export default {
     blog: 'BLOG',
     contact: 'CONTACT'
   },
+  err: {
+    pageNotFound: '404 Not Found',
+    otherError: 'An error occurred'
+  },
   ava: {
     checkIn: 'check-in',
     checkOut: 'check-out',

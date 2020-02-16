@@ -7,7 +7,7 @@
       {{ otherError }}
     </h1>
     <NuxtLink to="/">
-      Home page
+      {{ $t('nav.home') }}
     </NuxtLink>
   </v-app>
 </template>
@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      pageNotFound: '404 Not Found',
+      pageNotFound: this.$t('err.pageNotFound'),
       otherError: 'An error occurred'
     }
   },
