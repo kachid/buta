@@ -1,6 +1,12 @@
 export default {
   contactUs: 'Contact Us',
   hotelName: 'Hotel Buta',
+  facebook: 'Our Facebook page',
+  instagram: 'Our Instagram',
+  address1: 'Batumi, Georgia',
+  address2: 'Kavtaradze #3',
+  hours: 'around the clock',
+  sendEmail: 'Send us your query anytime!',
   nav: {
     home: 'HOME',
     about: 'ABOUT',

@@ -63,6 +63,9 @@ export default {
   vuetify: {
     /* optionsPath: '~/vuetify.options.js', */
     customVariables: ['~/assets/variables.scss'],
+    icons: {
+      iconfont: 'fa4'
+    },
     theme: {
       dark: false,
       themes: {

@@ -83,6 +83,27 @@
             <span class="ma-6">&copy; 2020</span>
           </v-col>
         </v-row>
+        <v-row>
+          <v-col cols="3">
+            <a
+              class="ma-6"
+              href="https://www.facebook.com/Hotel-Buta-434967777052587"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ $t('facebook') }}
+            </a>
+          </v-col>
+          <v-col>
+            <a
+              href="https://www.instagram.com/hotelbuta/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ $t('instagram') }}
+            </a>
+          </v-col>
+        </v-row>
       </v-img>
     </v-footer>
   </v-app>

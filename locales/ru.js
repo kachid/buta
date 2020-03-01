@@ -1,6 +1,12 @@
 export default {
   contactUs: 'Свяжитесь с нами',
   hotelName: 'Отель Бута',
+  facebook: 'Мы в Facebook',
+  instagram: 'Мы в Instagram',
+  address1: 'Батуми, Грузия',
+  address2: 'Кавтарадзе 3',
+  hours: 'круглосуточно',
+  sendEmail: 'Отправьте нам свой запрос в любое время!',
   nav: {
     home: 'ГЛАВНАЯ',
     about: 'О НАС',

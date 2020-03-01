@@ -14,6 +14,9 @@
           </v-card-subtitle>
           <v-card-text>
             <slot name="description" />
+            <div class="price">
+              <slot name="price" />
+            </div>
           </v-card-text>
         </div>
       </v-card>
@@ -32,3 +35,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+.price {
+  font-size: 2rem;
+  margin: 2rem;
+}
+</style>

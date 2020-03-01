@@ -29,6 +29,9 @@
           <v-icon v-for="(icon, j) in amount" :key="j">{{ icons }}</v-icon>
         </div>
       </template>
+      <template #price>
+        {{ item.price }}
+      </template>
     </app-room-description>
   </div>
 </template>
@@ -48,6 +51,7 @@ export default {
           title: this.$t('rooms.twoBedroomHouse'),
           sleeps: 5,
           img: '/images/house.jpg',
+          price: '4 542 руб.',
           description: [
             {
               room: {
@@ -79,6 +83,7 @@ export default {
           title: this.$t('rooms.standardTripleRoom'),
           sleeps: 3,
           img: '/images/standart_triple_room.jpg',
+          price: '1 363 руб.',
           description: [
             {
               room: { name: '', amountSleeps: this.$tc('rooms.singleBed', 3) },
@@ -91,6 +96,7 @@ export default {
           title: this.$t('rooms.superiorTripleRoom'),
           sleeps: 3,
           img: '/images/superior_triple_room.jpg',
+          price: '1 363 руб.',
           description: [
             {
               room: { name: '', amountSleeps: this.$tc('rooms.singleBed', 1) },
@@ -108,6 +114,7 @@ export default {
           title: this.$t('rooms.deluxeApartment'),
           sleeps: 5,
           img: '/images/deluxe_apartment.jpg',
+          price: '2 271 руб.',
           description: [
             {
               room: {
