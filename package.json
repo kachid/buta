@@ -16,7 +16,8 @@
     "font-awesome": "^4.7.0",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.5.0",
-    "vue2-google-maps": "^0.10.7"
+    "vue2-google-maps": "^0.10.7",
+    "@nuxtjs/vuetify": "^1.10.3"
   },
   "devDependencies": {
     "@intlify/vue-i18n-extensions": "^1.0.0",
@@ -24,7 +25,6 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^2.0.2",
     "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/vuetify": "^1.10.3",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.10.0",
