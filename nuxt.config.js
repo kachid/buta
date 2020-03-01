@@ -32,11 +32,11 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxtjs/vuetify', '@nuxtjs/dotenv', '@nuxtjs/eslint-module'],
+  buildModules: ['@nuxtjs/vuetify', '@nuxtjs/eslint-module'],
   /*
    ** Nuxt.js modules
    */
-  modules: ['nuxt-i18n'],
+  modules: ['nuxt-i18n', '@nuxtjs/dotenv'],
   i18n: {
     strategy: 'no_prefix',
     locales: [
