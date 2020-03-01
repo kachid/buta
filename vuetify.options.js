@@ -1,11 +1,22 @@
-import en from 'vuetify/es5/locale/en'
-import ru from 'vuetify/es5/locale/ru'
+import colors from 'vuetify/es5/util/colors'
 
-export default function({ app }) {
-  return {
-    lang: {
-      locales: { en, ru },
-      t: (key, ...params) => app.i18n.t(key, params)
+export default {
+  themes: {
+    dark: {
+      primary: colors.blue.darken2,
+      accent: colors.grey.darken3,
+      secondary: colors.amber.darken3,
+      info: colors.teal.lighten1,
+      warning: colors.amber.base,
+      error: colors.deepOrange.accent4,
+      success: colors.green.accent3
     }
+  },
+  customVariables: ['~/assets/variables.scss'],
+  icons: {
+    iconfont: 'fa4'
+  },
+  theme: {
+    dark: false
   }
 }
