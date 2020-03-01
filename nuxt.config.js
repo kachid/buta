@@ -33,11 +33,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    '@nuxtjs/vuetify',
-    '@nuxtjs/dotenv'
-  ],
-  devModules: ['@nuxtjs/eslint-module'],
+  buildModules: ['@nuxtjs/vuetify', '@nuxtjs/dotenv', '@nuxtjs/eslint-module'],
   /*
    ** Nuxt.js modules
    */
