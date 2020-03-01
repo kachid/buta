@@ -32,14 +32,13 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ['@nuxtjs/eslint-module'],
   /*
    ** Nuxt.js modules
    */
   modules: [
     'nuxt-i18n',
     '@nuxtjs/dotenv',
-    '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify'
   ],
   i18n: {
