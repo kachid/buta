@@ -36,11 +36,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    'nuxt-i18n',
-    '@nuxtjs/dotenv',
-    '@nuxtjs/vuetify'
-  ],
+  modules: ['nuxt-i18n', '@nuxtjs/dotenv', '@nuxtjs/vuetify'],
   i18n: {
     strategy: 'no_prefix',
     locales: [
