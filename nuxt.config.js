@@ -3,6 +3,11 @@ require('dotenv').config()
 export default {
   mode: 'universal',
 
+  server: {
+    port: 54312, // default: 3000
+    host: '127.0.4.164' // default: localhost
+  },
+
   env: {
     mapKey: process.env.API_GOOGLE_MAP_KEY
   },
@@ -32,7 +37,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxtjs/eslint-module'],
+  // buildModules: ['@nuxtjs/eslint-module'],
   /*
    ** Nuxt.js modules
    */
